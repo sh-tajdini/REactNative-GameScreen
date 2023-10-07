@@ -56,12 +56,12 @@ function nextGuessHandler(direction){
     <Card>
     <InstructionText style={styles.InstructionText}>Higher or lower? </InstructionText>
     <View style={styles.buttonsContainer}>
-        <View style={buttonContainer}>
+        <View style={styles.buttonContainer}>
         <PrimaryButton onPress={nextGuessHandler.bind(this,'lower')}>
           <Ionicons name="md-remove" size={24} color="white"/>
             </PrimaryButton>
         </View>
-        <View style={buttonContainer}>
+        <View style={styles.buttonContainer}>
         <PrimaryButton onPress={nextGuessHandler.bind(this,'greater')}>
         <Ionicons name="md-add" size={24} color="white"/>
             </PrimaryButton>
