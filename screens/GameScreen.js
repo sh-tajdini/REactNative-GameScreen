@@ -53,10 +53,14 @@ function nextGuessHandler(direction){
     </Title>
    <NumberContainer>{currentGuess}</NumberContainer>
     <Card>
-    <InstructionText>Higher or lower? </InstructionText>
-    <View>
+    <InstructionText style={styles.InstructionText}>Higher or lower? </InstructionText>
+    <View style={styles.buttonsContainer}>
+        <View style={buttonContainer}>
         <PrimaryButton onPress={nextGuessHandler.bind(this,'lower')}>-</PrimaryButton>
+        </View>
+        <View style={buttonContainer}>
         <PrimaryButton onPress={nextGuessHandler.bind(this,'greater')}>+</PrimaryButton>
+        </View>
     </View>
     </Card>
     {/* <View>LOG ROUNDS</View> */}
@@ -70,5 +74,13 @@ const styles = StyleSheet.create({
         flex:1,
         padding:24,
     },
-   
+    InstructionText:{
+        marginBottom:12,
+    },
+    buttonsContainer:{
+        flexDirection:"row",
+    },
+    buttonContainer:{
+        flex:1,
+    }
 });
