@@ -4,5 +4,5 @@ function GameOverScreen() {
         <Text>Game is over !</Text>
     );
 }
-
+//
 export default GameOverScreen;
