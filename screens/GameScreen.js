@@ -72,6 +72,7 @@ function nextGuessHandler(direction){
     </View>
     );
 }
+//
 export default GameScreen;
 
 const styles = StyleSheet.create({
