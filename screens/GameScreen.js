@@ -30,7 +30,7 @@ const [guessRounds,setGuessRounds] = useState([initialGuess]);
 
 useEffect(()=>{
     if(currentGuess === userNumber){
-        onGameOver();
+        onGameOver(guessRounds.length);
     }
 },[currentGuess,userNumber,onGameOver]);
 
@@ -78,7 +78,7 @@ const guessRoundsListLength = guessRounds.length;
         </View>
     </View>
     </Card>
-        <View>
+        <View style={styles.listContainer}>
             {/* {guessRounds.map(guessRound => <Text key={guessRound}>{guessRound}</Text>)} */}
             <FlatList data={guessRounds} 
             renderItem={(itemData) => 
@@ -108,5 +108,11 @@ const styles = StyleSheet.create({
     },
     buttonContainer:{
         flex:1,
-    }
+    },
+    listContainer:{
+        flex:1,
+        padding:16,
+
+    },
+
 });
