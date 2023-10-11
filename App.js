@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { StyleSheet,ImageBackground, SafeAreaView} from 'react-native';
 import {useFonts} from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { StatusBar } from 'expo-status-bar';
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
@@ -51,18 +52,21 @@ if(gameIsOver && userNumber){
   />;
 }
   return (
-    <LinearGradient  colors={[Colors.primary700,Colors.accent500]} style={styles.rootScreen}>
-      <ImageBackground 
-      source={require('./assets/images/background.png')} 
-      resizeMode='cover'
-      style={styles.rootScreen}
-      imageStyle={styles.backgroundImage}
-      >
-        <SafeAreaView style={styles.rootScreen}>
-          {screen}
-        </SafeAreaView>
-      </ImageBackground>
-    </LinearGradient>
+   <>
+      <StatusBar style="light"/>
+      <LinearGradient  colors={[Colors.primary700,Colors.accent500]} style={styles.rootScreen}>
+        <ImageBackground 
+        source={require('./assets/images/background.png')} 
+        resizeMode='cover'
+        style={styles.rootScreen}
+        imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView style={styles.rootScreen}>
+            {screen}
+          </SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   );
 }
 
